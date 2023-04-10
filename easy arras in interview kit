@@ -1,0 +1,48 @@
+problem:
+Consider the following version of Bubble Sort:
+
+for (int i = 0; i < n; i++) {
+    
+    for (int j = 0; j < n - 1; j++) {
+        // Swap adjacent elements if they are in decreasing order
+        if (a[j] > a[j + 1]) {
+            swap(a[j], a[j + 1]);
+        }
+    }
+    
+}
+Given an array of integers, sort the array in ascending order using the Bubble Sort algorithm above. Once sorted, print the following three lines:
+
+Array is sorted in numSwaps swaps., where nums of swap is the number of swaps that took place.
+First Element: firstElement, where first element  is the first element in the sorted array.
+Last Element: lastElement, where last element is the last element in the sorted array.
+Solution:
+def countSwaps(a):
+    count=0
+    for i in range(len(a)-1):
+        for j in range(i,len(a)):
+            if a[i]>a[j]:
+                a[i],a[j]=a[j],a[i]
+                count+=1
+    print("Array is sorted in",count,"swaps.")
+    print("First Element:",a[0])
+    print("Last Element:",a[-1])
+    
+   problem:
+   Mark and Jane are very happy after having their first child. Their son loves toys, so Mark wants to buy some. 
+   There are a number of different toys lying in front of him, tagged with their prices. Mark has only a certain amount to spend, and he wants to maximize 
+   the number of toys he buys with this money. Given a list of toy prices and an amount to spend, determine the maximum number of gifts he can buy.
+   Note Each toy can be purchased only once.
+   solution:
+   def maximumToys(prices, k):
+    prices=sorted(prices)
+    maxn=0
+    sum1=prices[0]
+    for i in range(1,len(prices)):
+        if sum1<k:
+            sum1+=prices[i]
+            maxn+=1
+    return maxn
+            
+    return prices
+   
